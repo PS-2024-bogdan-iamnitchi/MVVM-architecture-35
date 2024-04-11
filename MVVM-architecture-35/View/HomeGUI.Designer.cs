@@ -35,10 +35,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.exitButton = new System.Windows.Forms.Button();
             this.playGameButton = new System.Windows.Forms.Button();
             this.adminButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.signOutButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -125,24 +125,6 @@
             this.label9.Text = "- The game ends when one player can no longer make a legal move, resulting in the" +
     "ir";
             // 
-            // exitButton
-            // 
-            this.exitButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.exitButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.exitButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.exitButton.FlatAppearance.BorderSize = 0;
-            this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exitButton.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
-            this.exitButton.Location = new System.Drawing.Point(187, 557);
-            this.exitButton.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(180, 55);
-            this.exitButton.TabIndex = 21;
-            this.exitButton.Text = "EXIT";
-            this.exitButton.UseVisualStyleBackColor = false;
-            //this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
-            // 
             // playGameButton
             // 
             this.playGameButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -159,7 +141,6 @@
             this.playGameButton.TabIndex = 19;
             this.playGameButton.Text = "PLAY GAME";
             this.playGameButton.UseVisualStyleBackColor = false;
-            //this.playGameButton.Click += new System.EventHandler(this.playGameButton_Click);
             // 
             // adminButton
             // 
@@ -177,7 +158,6 @@
             this.adminButton.TabIndex = 20;
             this.adminButton.Text = "ADMIN";
             this.adminButton.UseVisualStyleBackColor = false;
-            //this.adminButton.Click += new System.EventHandler(this.adminButton_Click);
             // 
             // pictureBox1
             // 
@@ -189,6 +169,23 @@
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
             // 
+            // signOutButton
+            // 
+            this.signOutButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.signOutButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.signOutButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.signOutButton.FlatAppearance.BorderSize = 0;
+            this.signOutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.signOutButton.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.signOutButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
+            this.signOutButton.Location = new System.Drawing.Point(187, 557);
+            this.signOutButton.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.signOutButton.Name = "signOutButton";
+            this.signOutButton.Size = new System.Drawing.Size(180, 55);
+            this.signOutButton.TabIndex = 21;
+            this.signOutButton.Text = "SIGN OUT";
+            this.signOutButton.UseVisualStyleBackColor = false;
+            // 
             // HomeGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -196,7 +193,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
             this.ClientSize = new System.Drawing.Size(984, 661);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.exitButton);
+            this.Controls.Add(this.signOutButton);
             this.Controls.Add(this.playGameButton);
             this.Controls.Add(this.adminButton);
             this.Controls.Add(this.label8);
@@ -207,6 +204,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "HomeGUI";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HomeGUI";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -223,9 +221,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Button playGameButton;
         private System.Windows.Forms.Button adminButton;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button signOutButton;
     }
 }

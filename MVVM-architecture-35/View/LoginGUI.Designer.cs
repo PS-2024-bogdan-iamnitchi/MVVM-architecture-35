@@ -35,7 +35,6 @@
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.clearButton = new System.Windows.Forms.Button();
             this.loginButton = new System.Windows.Forms.Button();
-            this.exitButton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.signUpLinkLabel = new System.Windows.Forms.LinkLabel();
             this.label4 = new System.Windows.Forms.Label();
@@ -62,7 +61,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
-            this.label2.Location = new System.Drawing.Point(220, 212);
+            this.label2.Location = new System.Drawing.Point(220, 221);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 32);
             this.label2.TabIndex = 1;
@@ -75,7 +74,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
-            this.label3.Location = new System.Drawing.Point(220, 293);
+            this.label3.Location = new System.Drawing.Point(220, 302);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(153, 32);
             this.label3.TabIndex = 2;
@@ -87,7 +86,7 @@
             this.emailTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.emailTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emailTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
-            this.emailTextBox.Location = new System.Drawing.Point(410, 212);
+            this.emailTextBox.Location = new System.Drawing.Point(410, 221);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(316, 31);
             this.emailTextBox.TabIndex = 3;
@@ -98,7 +97,7 @@
             this.passwordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.passwordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
-            this.passwordTextBox.Location = new System.Drawing.Point(410, 293);
+            this.passwordTextBox.Location = new System.Drawing.Point(410, 302);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.PasswordChar = '●';
             this.passwordTextBox.Size = new System.Drawing.Size(316, 31);
@@ -113,14 +112,13 @@
             this.clearButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clearButton.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clearButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
-            this.clearButton.Location = new System.Drawing.Point(392, 435);
+            this.clearButton.Location = new System.Drawing.Point(226, 449);
             this.clearButton.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.clearButton.Name = "clearButton";
-            this.clearButton.Size = new System.Drawing.Size(180, 55);
+            this.clearButton.Size = new System.Drawing.Size(238, 55);
             this.clearButton.TabIndex = 5;
             this.clearButton.Text = "CLEAR";
             this.clearButton.UseVisualStyleBackColor = false;
-            //this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
             // loginButton
             // 
@@ -131,32 +129,13 @@
             this.loginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginButton.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
-            this.loginButton.Location = new System.Drawing.Point(606, 435);
+            this.loginButton.Location = new System.Drawing.Point(498, 449);
             this.loginButton.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(180, 55);
+            this.loginButton.Size = new System.Drawing.Size(228, 55);
             this.loginButton.TabIndex = 6;
             this.loginButton.Text = "LOGIN";
             this.loginButton.UseVisualStyleBackColor = false;
-            //this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
-            // 
-            // exitButton
-            // 
-            this.exitButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.exitButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.exitButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.exitButton.FlatAppearance.BorderSize = 0;
-            this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exitButton.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
-            this.exitButton.Location = new System.Drawing.Point(176, 435);
-            this.exitButton.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(180, 55);
-            this.exitButton.TabIndex = 7;
-            this.exitButton.Text = "EXIT";
-            this.exitButton.UseVisualStyleBackColor = false;
-            //this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // label6
             // 
@@ -165,7 +144,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
-            this.label6.Location = new System.Drawing.Point(315, 524);
+            this.label6.Location = new System.Drawing.Point(315, 538);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(196, 18);
             this.label6.TabIndex = 23;
@@ -177,13 +156,12 @@
             this.signUpLinkLabel.AutoSize = true;
             this.signUpLinkLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signUpLinkLabel.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
-            this.signUpLinkLabel.Location = new System.Drawing.Point(517, 524);
+            this.signUpLinkLabel.Location = new System.Drawing.Point(517, 538);
             this.signUpLinkLabel.Name = "signUpLinkLabel";
             this.signUpLinkLabel.Size = new System.Drawing.Size(135, 18);
             this.signUpLinkLabel.TabIndex = 22;
             this.signUpLinkLabel.TabStop = true;
             this.signUpLinkLabel.Text = "Create Account";
-            //this.signUpLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.signUpLinkLabel_LinkClicked);
             // 
             // label4
             // 
@@ -192,7 +170,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
-            this.label4.Location = new System.Drawing.Point(315, 560);
+            this.label4.Location = new System.Drawing.Point(315, 574);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(229, 18);
             this.label4.TabIndex = 25;
@@ -204,13 +182,12 @@
             this.playGameLinkedLabel.AutoSize = true;
             this.playGameLinkedLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.playGameLinkedLabel.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
-            this.playGameLinkedLabel.Location = new System.Drawing.Point(552, 560);
+            this.playGameLinkedLabel.Location = new System.Drawing.Point(552, 574);
             this.playGameLinkedLabel.Name = "playGameLinkedLabel";
             this.playGameLinkedLabel.Size = new System.Drawing.Size(93, 18);
             this.playGameLinkedLabel.TabIndex = 24;
             this.playGameLinkedLabel.TabStop = true;
             this.playGameLinkedLabel.Text = "Play Game";
-            //this.playGameLinkedLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.playGameLinkedLabel_LinkClicked);
             // 
             // LoginGUI
             // 
@@ -222,7 +199,6 @@
             this.Controls.Add(this.playGameLinkedLabel);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.signUpLinkLabel);
-            this.Controls.Add(this.exitButton);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.clearButton);
             this.Controls.Add(this.passwordTextBox);
@@ -233,6 +209,7 @@
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "LoginGUI";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginGUI";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -248,7 +225,6 @@
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.Button loginButton;
-        private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.LinkLabel signUpLinkLabel;
         private System.Windows.Forms.Label label4;

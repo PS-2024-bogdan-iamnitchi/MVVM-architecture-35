@@ -1,4 +1,4 @@
-﻿using MVVM_architecture_35.ViewModel.Commands.LoginCommands;
+﻿using MVVM_architecture_35.ViewModel.Commands.SignUpCommands;
 using MVVM_architecture_35.ViewModel.Commands;
 using System;
 using System.Collections.Generic;
@@ -6,36 +6,55 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MVVM_architecture_35.ViewModel.Commands.SignUpCommands;
 using System.Windows.Forms;
+using MVVM_architecture_35.ViewModel.Commands.EditPlayersCommands;
 
 namespace MVVM_architecture_35.ViewModel
 {
-    public class SignUpVM : INotifyPropertyChanged
+    public class EditPlayersVM : INotifyPropertyChanged
     {
+        private int playerID;
         private string fullName;
         private string email;
         private int age;
         private string password;
+
+        public string loggedPlayerEmail;
         private bool isVisible;
-        public IComand SignUpCommand;
-        public IComand ClearCommand;
-        public IComand ToLoginCommand;
+        public IComand LoadCommand;
+        public IComand AddCommand;
+        public IComand UpdateCommand;
+        public IComand DeleteCommand;
+        public IComand SearchCommand;
+        public IComand ToHomeCommand;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public SignUpVM()
+        public EditPlayersVM(string loggedPlayerEmail)
         {
+            this.playerID = 0;
             this.fullName = "";
             this.email = "";
             this.age = 0;
             this.password = "";
+            this.loggedPlayerEmail = loggedPlayerEmail;
             this.isVisible = true;
-            this.SignUpCommand = new SignUpCommand(this);
-            this.ClearCommand = new Commands.SignUpCommands.ClearCommand(this);
-            this.ToLoginCommand = new ToLoginCommand(this);
+            this.LoadCommand = new LoadCommand(this);
+            this.AddCommand = new AddCommand(this);
+            this.UpdateCommand = new UpdateCommand(this);
+            this.DeleteCommand = new DeleteCommand(this);
+            this.SearchCommand = new SearchCommand(this);
+            this.ToHomeCommand = new ToHomeCommand(this);
         }
-
+        public int PlayerID
+        {
+            get { return this.playerID; }
+            set
+            {
+                this.playerID = value;
+                OnPropertyChanged(nameof(PlayerID));
+            }
+        }
         public string FullName
         {
             get { return this.fullName; }
@@ -73,6 +92,15 @@ namespace MVVM_architecture_35.ViewModel
             }
         }
 
+        public string LoggedPlayerEmail
+        {
+            get { return this.loggedPlayerEmail; }
+            set
+            {
+                this.loggedPlayerEmail = value;
+                OnPropertyChanged(nameof(IsVisible));
+            }
+        }
         public bool IsVisible
         {
             get { return this.isVisible; }

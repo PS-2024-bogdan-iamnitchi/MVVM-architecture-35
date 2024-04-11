@@ -54,8 +54,24 @@
     <Compile Include="Model\Repository\Repository.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModel\Commands\LoginCommand.cs" />
-    <Compile Include="ViewModel\EditPlayerVM.cs" />
+    <Compile Include="ViewModel\Commands\EditPlayersCommands\AddCommand.cs" />
+    <Compile Include="ViewModel\Commands\EditPlayersCommands\DeleteCommand.cs" />
+    <Compile Include="ViewModel\Commands\EditPlayersCommands\LoadCommand.cs" />
+    <Compile Include="ViewModel\Commands\EditPlayersCommands\SearchCommand.cs" />
+    <Compile Include="ViewModel\Commands\EditPlayersCommands\ToHomeCommand.cs" />
+    <Compile Include="ViewModel\Commands\EditPlayersCommands\UpdateCommand.cs" />
+    <Compile Include="ViewModel\Commands\HomeCommands\SignOutCommand.cs" />
+    <Compile Include="ViewModel\Commands\HomeCommands\ToEditPlayersCommand.cs" />
+    <Compile Include="ViewModel\Commands\HomeCommands\ToGameCommand.cs" />
+    <Compile Include="ViewModel\Commands\IComanda.cs" />
+    <Compile Include="ViewModel\Commands\LoginCommands\ClearCommand.cs" />
+    <Compile Include="ViewModel\Commands\LoginCommands\LoginCommand.cs" />
+    <Compile Include="ViewModel\Commands\LoginCommands\ToSignUpCommand.cs" />
+    <Compile Include="ViewModel\Commands\LoginCommands\ToGameCommand.cs" />
+    <Compile Include="ViewModel\Commands\SignUpCommands\ClearCommand.cs" />
+    <Compile Include="ViewModel\Commands\SignUpCommands\SignUpCommand.cs" />
+    <Compile Include="ViewModel\Commands\SignUpCommands\ToLoginCommand.cs" />
+    <Compile Include="ViewModel\EditPlayersVM.cs" />
     <Compile Include="ViewModel\GameVM.cs" />
     <Compile Include="ViewModel\HomeVM.cs" />
     <Compile Include="ViewModel\LoginVM.cs" />
@@ -128,7 +144,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="ViewModel\Commands\GameCommands\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Images\green\green-center.png" />
   </ItemGroup>

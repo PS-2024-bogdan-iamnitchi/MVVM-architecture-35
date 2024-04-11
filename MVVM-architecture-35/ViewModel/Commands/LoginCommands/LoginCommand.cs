@@ -1,4 +1,5 @@
 ﻿using MVVM_architecture_35.Model.Repository;
+using MVVM_architecture_35.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,10 +7,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Input;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace MVVM_architecture_35.ViewModel.Commands
 {
-    public class LoginCommand : ICommand
+    public class LoginCommand : IComand
     {
         private LoginVM loginVM;
         
@@ -18,13 +20,8 @@ namespace MVVM_architecture_35.ViewModel.Commands
             this.loginVM = loginVM;
         }
 
-        public event EventHandler CanExecuteChanged;
-        public bool CanExecute(object parameter)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Execute(object parameter)
+        //Implementing IComand -----------------------------------------------------------------------------------------------------
+        public void Execute()
         {
             PlayerRepository playerRepository = new PlayerRepository();
 
@@ -38,31 +35,39 @@ namespace MVVM_architecture_35.ViewModel.Commands
                     bool result = playerRepository.LoginPlayer(email, password);
                     if (result)
                     {
-                        //this.iLoginGUI.SetMessage("Success!", "Login successfully!");
-                        //this.homeView();
+                        //this.loginVM.SetMessage("Success!", "New account was created successfully!");
+                        this.toHomeGUI(email);
                     }
                     else
-                        MessageBox.Show("Failure!", "Login was ended with failure!");
+                        this.loginVM.SetMessage("Failure!", "Login was ended with failure!");
 
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Exeption - Login", ex.ToString());
+                this.loginVM.SetMessage("Exeption - Login", ex.ToString());
             }
+        }
+
+        //Command specific----------------------------------------------------------------------------------------------------------------------
+        private void toHomeGUI(string email)
+        {
+            this.loginVM.IsVisible = false;
+            HomeGUI homeGUI = new HomeGUI(email);
+            homeGUI.Show();
         }
 
         private bool validInformation(string email, string password)
         {
             if (email == null || email.Length == 0)
             {
-                MessageBox.Show("Incomplete information!", "Email field is empty!");
+                this.loginVM.SetMessage("Incomplete information!", "Email field is empty!");
                 return false;
             }
 
             if (password == null || password.Length == 0)
             {
-                MessageBox.Show("Incomplete information!", "Password field is empty!");
+                this.loginVM.SetMessage("Incomplete information!", "Password field is empty!");
                 return false;
             }
             return true;

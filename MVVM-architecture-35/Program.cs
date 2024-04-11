@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVVM_architecture_35.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace MVVM_architecture_35
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new LoginGUI());
         }
     }
 }

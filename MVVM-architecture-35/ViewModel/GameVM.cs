@@ -8,6 +8,9 @@ namespace MVVM_architecture_35.ViewModel
 {
     public class GameVM
     {
+        public GameVM(string email)
+        {
 
+        }
     }
 }

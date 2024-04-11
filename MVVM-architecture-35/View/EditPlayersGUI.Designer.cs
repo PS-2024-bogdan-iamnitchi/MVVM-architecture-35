@@ -118,7 +118,6 @@
             this.playersDataGridView.RowTemplate.Height = 50;
             this.playersDataGridView.Size = new System.Drawing.Size(817, 311);
             this.playersDataGridView.TabIndex = 0;
-            //this.playersDataGridView.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.playersDataGridView_RowStateChanged);
             // 
             // PlayerID
             // 
@@ -330,7 +329,6 @@
             this.deleteButton.Size = new System.Drawing.Size(65, 65);
             this.deleteButton.TabIndex = 34;
             this.deleteButton.UseVisualStyleBackColor = true;
-            //this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // updateButton
             // 
@@ -344,7 +342,6 @@
             this.updateButton.Size = new System.Drawing.Size(65, 65);
             this.updateButton.TabIndex = 33;
             this.updateButton.UseVisualStyleBackColor = true;
-            //this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
             // 
             // addButton
             // 
@@ -358,7 +355,6 @@
             this.addButton.Size = new System.Drawing.Size(65, 65);
             this.addButton.TabIndex = 32;
             this.addButton.UseVisualStyleBackColor = true;
-            //this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // searchTextBox
             // 
@@ -387,7 +383,6 @@
             this.searchButton.TabIndex = 40;
             this.searchButton.Text = "SEARCH";
             this.searchButton.UseVisualStyleBackColor = false;
-            //this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // backButton
             // 
@@ -405,7 +400,6 @@
             this.backButton.TabIndex = 41;
             this.backButton.Text = "BACK";
             this.backButton.UseVisualStyleBackColor = false;
-            //this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // EditPlayersGUI
             // 
@@ -434,8 +428,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.playersDataGridView);
             this.Name = "EditPlayersGUI";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditPlayersGUI";
-            //this.Load += new System.EventHandler(this.EditPlayersGUI_Load);
             ((System.ComponentModel.ISupportInitialize)(this.playersDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPlayerID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAge)).EndInit();

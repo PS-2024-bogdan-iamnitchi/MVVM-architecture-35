@@ -39,7 +39,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.loginLinkedLabel = new System.Windows.Forms.LinkLabel();
             this.label6 = new System.Windows.Forms.Label();
-            this.exitButton = new System.Windows.Forms.Button();
             this.clearButton = new System.Windows.Forms.Button();
             this.ageNumUpDown = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.ageNumUpDown)).BeginInit();
@@ -54,14 +53,13 @@
             this.signUpButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.signUpButton.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signUpButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
-            this.signUpButton.Location = new System.Drawing.Point(618, 490);
+            this.signUpButton.Location = new System.Drawing.Point(502, 485);
             this.signUpButton.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.signUpButton.Name = "signUpButton";
-            this.signUpButton.Size = new System.Drawing.Size(180, 55);
+            this.signUpButton.Size = new System.Drawing.Size(214, 55);
             this.signUpButton.TabIndex = 14;
             this.signUpButton.Text = "SIGNUP";
             this.signUpButton.UseVisualStyleBackColor = false;
-            //this.signUpButton.Click += new System.EventHandler(this.signUpButton_Click);
             // 
             // emailTextBox
             // 
@@ -174,7 +172,6 @@
             this.loginLinkedLabel.TabIndex = 20;
             this.loginLinkedLabel.TabStop = true;
             this.loginLinkedLabel.Text = "Login";
-            //this.loginLinkedLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.loginLinkedLabel_LinkClicked);
             // 
             // label6
             // 
@@ -189,24 +186,6 @@
             this.label6.TabIndex = 21;
             this.label6.Text = "Already have an account?";
             // 
-            // exitButton
-            // 
-            this.exitButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.exitButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.exitButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.exitButton.FlatAppearance.BorderSize = 0;
-            this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exitButton.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
-            this.exitButton.Location = new System.Drawing.Point(188, 490);
-            this.exitButton.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(180, 55);
-            this.exitButton.TabIndex = 15;
-            this.exitButton.Text = "EXIT";
-            this.exitButton.UseVisualStyleBackColor = false;
-            //this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
-            // 
             // clearButton
             // 
             this.clearButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -216,14 +195,13 @@
             this.clearButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clearButton.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clearButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
-            this.clearButton.Location = new System.Drawing.Point(404, 490);
+            this.clearButton.Location = new System.Drawing.Point(253, 485);
             this.clearButton.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.clearButton.Name = "clearButton";
-            this.clearButton.Size = new System.Drawing.Size(180, 55);
+            this.clearButton.Size = new System.Drawing.Size(215, 55);
             this.clearButton.TabIndex = 13;
             this.clearButton.Text = "CLEAR";
             this.clearButton.UseVisualStyleBackColor = false;
-            //this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
             // ageNumUpDown
             // 
@@ -248,7 +226,6 @@
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.exitButton);
             this.Controls.Add(this.signUpButton);
             this.Controls.Add(this.clearButton);
             this.Controls.Add(this.emailTextBox);
@@ -257,6 +234,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "SignUpGUI";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SignUpGUI";
             ((System.ComponentModel.ISupportInitialize)(this.ageNumUpDown)).EndInit();
             this.ResumeLayout(false);
@@ -276,7 +254,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.LinkLabel loginLinkedLabel;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.NumericUpDown ageNumUpDown;
     }

@@ -161,7 +161,6 @@
             0,
             0,
             0});
-            //this.nudLevel.ValueChanged += new System.EventHandler(this.nudLevel_ValueChanged);
             // 
             // oponentMovesPictureBox
             // 
@@ -232,7 +231,6 @@
             this.restartGameButton.Size = new System.Drawing.Size(70, 70);
             this.restartGameButton.TabIndex = 39;
             this.restartGameButton.UseVisualStyleBackColor = true;
-            //this.restartGameButton.Click += new System.EventHandler(this.restartGameButton_Click);
             // 
             // playPauseButton
             // 
@@ -246,7 +244,6 @@
             this.playPauseButton.Size = new System.Drawing.Size(70, 70);
             this.playPauseButton.TabIndex = 35;
             this.playPauseButton.UseVisualStyleBackColor = true;
-            //this.playPauseButton.Click += new System.EventHandler(this.playGameButton_Click);
             // 
             // leaveGameButton
             // 
@@ -260,12 +257,10 @@
             this.leaveGameButton.Size = new System.Drawing.Size(70, 70);
             this.leaveGameButton.TabIndex = 41;
             this.leaveGameButton.UseVisualStyleBackColor = true;
-            //this.leaveGameButton.Click += new System.EventHandler(this.leaveGameButton_Click);
             // 
             // timerCPU
             // 
             this.timerCPU.Interval = 1000;
-            //this.timerCPU.Tick += new System.EventHandler(this.CPUMove);
             // 
             // buttonsTableLayout
             // 
@@ -335,6 +330,7 @@
             this.Controls.Add(this.oponentMovesPictureBox);
             this.Controls.Add(this.label1);
             this.Name = "GameGUI";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GameGUI";
             ((System.ComponentModel.ISupportInitialize)(this.nudLevel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.oponentMovesPictureBox)).EndInit();

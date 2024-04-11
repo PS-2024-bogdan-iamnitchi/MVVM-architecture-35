@@ -11,7 +11,7 @@ namespace MVVM_architecture_35.Model.Repository
         public Repository()
         {
             string connectionString = "Data Source=BOGDAN\\SQLEXPRESS;";
-            connectionString += "Initial Catalog=PS_MVP_35;";
+            connectionString += "Initial Catalog=PS_MVVM_35;";
             connectionString += "Integrated Security=True;";
             this.connection = new SqlConnection(connectionString);
         }
