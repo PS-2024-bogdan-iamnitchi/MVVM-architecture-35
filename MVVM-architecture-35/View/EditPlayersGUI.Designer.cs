@@ -60,6 +60,7 @@
             this.searchTextBox = new System.Windows.Forms.TextBox();
             this.searchButton = new System.Windows.Forms.Button();
             this.backButton = new System.Windows.Forms.Button();
+            this.loadButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.playersDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPlayerID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAge)).BeginInit();
@@ -324,7 +325,7 @@
             this.deleteButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.deleteButton.FlatAppearance.BorderSize = 0;
             this.deleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deleteButton.Location = new System.Drawing.Point(888, 485);
+            this.deleteButton.Location = new System.Drawing.Point(886, 510);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(65, 65);
             this.deleteButton.TabIndex = 34;
@@ -337,7 +338,7 @@
             this.updateButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.updateButton.FlatAppearance.BorderSize = 0;
             this.updateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.updateButton.Location = new System.Drawing.Point(888, 387);
+            this.updateButton.Location = new System.Drawing.Point(886, 430);
             this.updateButton.Name = "updateButton";
             this.updateButton.Size = new System.Drawing.Size(65, 65);
             this.updateButton.TabIndex = 33;
@@ -350,7 +351,7 @@
             this.addButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.addButton.FlatAppearance.BorderSize = 0;
             this.addButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addButton.Location = new System.Drawing.Point(888, 287);
+            this.addButton.Location = new System.Drawing.Point(886, 350);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(65, 65);
             this.addButton.TabIndex = 32;
@@ -401,12 +402,26 @@
             this.backButton.Text = "BACK";
             this.backButton.UseVisualStyleBackColor = false;
             // 
+            // loadButton
+            // 
+            this.loadButton.BackgroundImage = global::MVVM_architecture_35.Properties.Resources.start;
+            this.loadButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.loadButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.loadButton.FlatAppearance.BorderSize = 0;
+            this.loadButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loadButton.Location = new System.Drawing.Point(886, 271);
+            this.loadButton.Name = "loadButton";
+            this.loadButton.Size = new System.Drawing.Size(65, 65);
+            this.loadButton.TabIndex = 42;
+            this.loadButton.UseVisualStyleBackColor = true;
+            // 
             // EditPlayersGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
             this.ClientSize = new System.Drawing.Size(984, 661);
+            this.Controls.Add(this.loadButton);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.searchTextBox);
@@ -467,5 +482,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Age;
         private System.Windows.Forms.DataGridViewTextBoxColumn Password;
         private System.Windows.Forms.DataGridViewTextBoxColumn Score;
+        private System.Windows.Forms.Button loadButton;
     }
 }

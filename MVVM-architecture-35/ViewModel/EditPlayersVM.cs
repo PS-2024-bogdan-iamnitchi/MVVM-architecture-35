@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MVVM_architecture_35.ViewModel.Commands.EditPlayersCommands;
+using System.Data;
 
 namespace MVVM_architecture_35.ViewModel
 {
@@ -18,6 +19,8 @@ namespace MVVM_architecture_35.ViewModel
         private string email;
         private int age;
         private string password;
+
+        public DataTable PlayersTable;
 
         public string loggedPlayerEmail;
         private bool isVisible;
@@ -37,6 +40,9 @@ namespace MVVM_architecture_35.ViewModel
             this.email = "";
             this.age = 0;
             this.password = "";
+
+            this.PlayersTable = new DataTable();
+
             this.loggedPlayerEmail = loggedPlayerEmail;
             this.isVisible = true;
             this.LoadCommand = new LoadCommand(this);
