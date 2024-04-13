@@ -22,6 +22,7 @@ namespace MVVM_architecture_35.ViewModel
         private bool scoreVisible;
         private uint playerScore;
         private uint oponentScore;
+        private bool cpuStart;
 
         private string loggedPlayerEmail;
         private bool isVisible;
@@ -37,8 +38,8 @@ namespace MVVM_architecture_35.ViewModel
         public IComand PlayCommand;
         public IComand RestartCommand;
         public IComand ExitCommand;
-        public IComand CellPressedCommand;
         public IComand LevelChangedCommand;
+        public IComand PlayerMoveCommand;
         public IComand CPUMovesCommand;
 
         public Button[,] ButtonsGrid;
@@ -59,8 +60,8 @@ namespace MVVM_architecture_35.ViewModel
             this.PlayCommand = new PlayCommand(this);
             this.RestartCommand = new RestartCommand(this);
             this.ExitCommand = new ExitCommand(this);
-            this.CellPressedCommand = new CellPressedCommand(this);
             this.LevelChangedCommand = new LevelChangedCommand(this);
+            this.PlayerMoveCommand = new PlayerMovesCommand(this);
             this.CPUMovesCommand = new CPUMovesCommand(this);
 
         }
@@ -108,6 +109,15 @@ namespace MVVM_architecture_35.ViewModel
             {
                 this.oponentScore = value;
                 OnPropertyChanged(nameof(OponentScore));
+            }
+        }
+        public bool CPUStart
+        {
+            get { return this.cpuStart; }
+            set
+            {
+                this.cpuStart = value;
+                OnPropertyChanged(nameof(CPUStart));
             }
         }
         public System.Drawing.Color PlayerColor
@@ -251,6 +261,7 @@ namespace MVVM_architecture_35.ViewModel
         {
             ButtonsGrid[row, col].BackgroundImageLayout = ImageLayout.Stretch;
             ButtonsGrid[row, col].BackgroundImage = Properties.Resources.ResourceManager.GetObject(imageName) as System.Drawing.Image;
+            ButtonsGrid[row, col].Enabled = false;
         }
 
         public void SetMessage(string title, string message)

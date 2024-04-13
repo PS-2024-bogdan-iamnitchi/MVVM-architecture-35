@@ -32,26 +32,21 @@ namespace MVVM_architecture_35.View
             this.playPauseButton.DataBindings.Add("BackgroundImage", this.gameVM, "playButtonImage", true, DataSourceUpdateMode.OnPropertyChanged);
 
             this.playPauseButton.Click += delegate { gameVM.PlayCommand.Execute(); };
-            this.restartGameButton.Click += delegate { gameVM.RestartCommand.Execute(); };
+            this.restartGameButton.Click += delegate { gameVM.RestartCommand.Execute(); this.UpdateControls(); };
             this.leaveGameButton.Click += delegate { gameVM.ExitCommand.Execute(); };
             this.nudLevel.ValueChanged += delegate { gameVM.LevelChangedCommand.Execute(); this.UpdateControls(); };
         
             this.timerCPU.Tick += delegate { gameVM.CPUMovesCommand.Execute(); };
-            //this.timerCPU.Start();
+            this.timerCPU.Start();
+            this.timerCPU.Enabled = false;
+            this.timerCPU.Enabled = true;
+
             this.UpdateControls();
-
-            this.gameVM.PropertyChanged += GameVM_PropertyChanged;
-        }
-
-        private void GameVM_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
-        {
-            Debug.WriteLine(e.PropertyName);
         }
 
         private void UpdateControls()
         {
             buttonsTableLayout.Controls.Clear();
-
             int boardSize = this.gameVM.gameModel.BoardSize;
             for (int i = 0; i < boardSize; i++)
             {

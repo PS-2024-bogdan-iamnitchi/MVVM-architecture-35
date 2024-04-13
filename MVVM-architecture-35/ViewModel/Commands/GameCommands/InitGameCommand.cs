@@ -106,6 +106,7 @@ namespace MVVM_architecture_35.ViewModel.Commands.GameCommands
                 dirButton.Click += (sender, e) =>
                 {
                     //this.playerMove(dir, color, row, col);
+                    this.gameVM.SetInitialButtonBackground(imageName, row, col);
                     messageBox.Close();
                 };
                 (int t_row, int t_col) = Arrow.DirectionToIndex(dir);

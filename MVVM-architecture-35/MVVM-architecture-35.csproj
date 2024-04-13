@@ -62,7 +62,7 @@
     <Compile Include="ViewModel\Commands\EditPlayersCommands\SetFiledsCommand.cs" />
     <Compile Include="ViewModel\Commands\EditPlayersCommands\ToHomeCommand.cs" />
     <Compile Include="ViewModel\Commands\EditPlayersCommands\UpdateCommand.cs" />
-    <Compile Include="ViewModel\Commands\GameCommands\CellPressedCommand.cs" />
+    <Compile Include="ViewModel\Commands\GameCommands\PlayerMovesCommand.cs" />
     <Compile Include="ViewModel\Commands\GameCommands\CPUMovesCommand.cs" />
     <Compile Include="ViewModel\Commands\GameCommands\ExitCommand.cs" />
     <Compile Include="ViewModel\Commands\GameCommands\InitGameCommand.cs" />

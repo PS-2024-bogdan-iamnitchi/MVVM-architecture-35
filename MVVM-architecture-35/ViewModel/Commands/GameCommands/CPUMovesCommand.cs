@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVVM_architecture_35.Model;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -20,6 +21,7 @@ namespace MVVM_architecture_35.ViewModel.Commands.GameCommands
         public void Execute()
         {
             Debug.WriteLine("Tick");
+            
         }
 
         //Command specific----------------------------------------------------------------------------------------------------------------------

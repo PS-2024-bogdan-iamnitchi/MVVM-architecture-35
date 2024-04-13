@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace MVVM_architecture_35.ViewModel.Commands.GameCommands
 {
-    public class CellPressedCommand : IComand
+    public class PlayerMovesCommand : IComand
     {
         private GameVM gameVM;
 
-        public CellPressedCommand(GameVM gameVM)
+        public PlayerMovesCommand(GameVM gameVM)
         {
             this.gameVM = gameVM;
         }
