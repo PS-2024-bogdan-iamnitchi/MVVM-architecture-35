@@ -20,7 +20,7 @@ namespace MVVM_architecture_35.ViewModel.Commands.HomeCommands
         public void Execute()
         {
             this.homeVM.IsVisible = false;
-            GameGUI gameGUI = new GameGUI("");
+            GameGUI gameGUI = new GameGUI(this.homeVM.LoggedPlayerEmail);
             gameGUI.Show();
         }
     }

@@ -63,6 +63,8 @@ namespace MVVM_architecture_35.ViewModel
             this.ToHomeCommand = new ToHomeCommand(this);
             this.SetFiledsCommand = new SetFiledsCommand(this);
             this.ResetFieldsCommand = new ResetFieldsCommand(this);
+
+            this.LoadCommand.Execute();
         }
         public uint PlayerID
         {
@@ -135,7 +137,7 @@ namespace MVVM_architecture_35.ViewModel
             set
             {
                 this.loggedPlayerEmail = value;
-                OnPropertyChanged(nameof(IsVisible));
+                OnPropertyChanged(nameof(LoggedPlayerEmail));
             }
         }
         public bool IsVisible

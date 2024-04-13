@@ -62,6 +62,13 @@
     <Compile Include="ViewModel\Commands\EditPlayersCommands\SetFiledsCommand.cs" />
     <Compile Include="ViewModel\Commands\EditPlayersCommands\ToHomeCommand.cs" />
     <Compile Include="ViewModel\Commands\EditPlayersCommands\UpdateCommand.cs" />
+    <Compile Include="ViewModel\Commands\GameCommands\CellPressedCommand.cs" />
+    <Compile Include="ViewModel\Commands\GameCommands\CPUMovesCommand.cs" />
+    <Compile Include="ViewModel\Commands\GameCommands\ExitCommand.cs" />
+    <Compile Include="ViewModel\Commands\GameCommands\InitGameCommand.cs" />
+    <Compile Include="ViewModel\Commands\GameCommands\LevelChangedCommand.cs" />
+    <Compile Include="ViewModel\Commands\GameCommands\PlayCommand.cs" />
+    <Compile Include="ViewModel\Commands\GameCommands\RestartCommand.cs" />
     <Compile Include="ViewModel\Commands\HomeCommands\SignOutCommand.cs" />
     <Compile Include="ViewModel\Commands\HomeCommands\ToEditPlayersCommand.cs" />
     <Compile Include="ViewModel\Commands\HomeCommands\ToGameCommand.cs" />
@@ -146,9 +153,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModel\Commands\GameCommands\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Images\green\green-center.png" />
   </ItemGroup>
