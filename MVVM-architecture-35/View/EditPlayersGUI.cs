@@ -21,9 +21,13 @@ namespace MVVM_architecture_35.View
             this.emailTextBox.DataBindings.Add("Text", this.editPlayersVM, "email", false, DataSourceUpdateMode.OnPropertyChanged);
             this.nudAge.DataBindings.Add("Value", this.editPlayersVM, "age", false, DataSourceUpdateMode.OnPropertyChanged);
             this.passwordTextBox.DataBindings.Add("Text", this.editPlayersVM, "password", false, DataSourceUpdateMode.OnPropertyChanged);
+            this.nudScore.DataBindings.Add("Value", this.editPlayersVM, "score", false, DataSourceUpdateMode.OnPropertyChanged);
+            this.searchTextBox.DataBindings.Add("Text", this.editPlayersVM, "searchInfo", false, DataSourceUpdateMode.OnPropertyChanged);
+
             this.DataBindings.Add("Visible", this.editPlayersVM, "isVisible", false, DataSourceUpdateMode.OnPropertyChanged);
 
             this.playersDataGridView.DataSource = this.editPlayersVM.PlayersTable;
+            this.playersDataGridView.RowStateChanged += delegate { playersTable_RowStateChanged(); };
 
             this.addButton.Click += delegate { editPlayersVM.AddCommand.Execute(); };
             this.updateButton.Click += delegate { editPlayersVM.UpdateCommand.Execute(); };
@@ -34,5 +38,14 @@ namespace MVVM_architecture_35.View
             this.backButton.Click += delegate { editPlayersVM.ToHomeCommand.Execute(); };
 
         }
+
+        private void playersTable_RowStateChanged()
+        {
+            if (this.playersDataGridView.SelectedRows.Count > 0)
+            {
+                this.editPlayersVM.SelectedRow = this.playersDataGridView.SelectedRows[0];
+                this.editPlayersVM.SetFiledsCommand.Execute();
+            }
+        } 
     }
 }

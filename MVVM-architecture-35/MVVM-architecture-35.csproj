@@ -57,7 +57,9 @@
     <Compile Include="ViewModel\Commands\EditPlayersCommands\AddCommand.cs" />
     <Compile Include="ViewModel\Commands\EditPlayersCommands\DeleteCommand.cs" />
     <Compile Include="ViewModel\Commands\EditPlayersCommands\LoadCommand.cs" />
+    <Compile Include="ViewModel\Commands\EditPlayersCommands\ResetFieldsCommand.cs" />
     <Compile Include="ViewModel\Commands\EditPlayersCommands\SearchCommand.cs" />
+    <Compile Include="ViewModel\Commands\EditPlayersCommands\SetFiledsCommand.cs" />
     <Compile Include="ViewModel\Commands\EditPlayersCommands\ToHomeCommand.cs" />
     <Compile Include="ViewModel\Commands\EditPlayersCommands\UpdateCommand.cs" />
     <Compile Include="ViewModel\Commands\HomeCommands\SignOutCommand.cs" />

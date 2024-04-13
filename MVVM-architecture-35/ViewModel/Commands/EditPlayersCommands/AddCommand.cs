@@ -33,8 +33,7 @@ namespace MVVM_architecture_35.ViewModel.Commands.EditPlayersCommands
                     {
                         this.editPlayersVM.SetMessage("Success!", "Adding was completed successfully!");
                         this.editPlayersVM.LoadCommand.Execute();
-                        //this.resetPlayerFields();
-                        //this.iEditPlayersGUI.ResetPlayersDataGridView();
+                        this.editPlayersVM.ResetFieldsCommand.Execute();
                     }
                     else
                         this.editPlayersVM.SetMessage("Failure!", "Adding was ended with failure!");
@@ -46,37 +45,46 @@ namespace MVVM_architecture_35.ViewModel.Commands.EditPlayersCommands
             }
         }
 
-         //Command specific----------------------------------------------------------------------------------------------------------------------
+        //Command specific----------------------------------------------------------------------------------------------------------------------
         private Player validInformation()
         {
+            uint playerID = this.editPlayersVM.PlayerID;
+            if (playerID == 0)
+            {
+                this.editPlayersVM.SetMessage("Incomplete information!", "Player ID must be non-zero natural number!");
+                return null;
+            }
             string fullName = this.editPlayersVM.FullName;
             if (fullName == null || fullName.Length == 0)
             {
-                this.editPlayersVM.SetMessage("Incomplete information!", "FullName field is empty!");
+                this.editPlayersVM.SetMessage("Incomplete information!", "Player name is empty!");
                 return null;
             }
-
             string email = this.editPlayersVM.Email;
             if (email == null || email.Length == 0)
             {
                 this.editPlayersVM.SetMessage("Incomplete information!", "Email field is empty!");
                 return null;
             }
-
-            uint age = (uint)this.editPlayersVM.Age;
+            uint age = this.editPlayersVM.Age;
             if (age <= 10)
             {
                 this.editPlayersVM.SetMessage("Incomplete information!", "Player age must be greater or equal with 10!");
                 return null;
             }
-
             string password = this.editPlayersVM.Password;
             if (password == null || password.Length == 0)
             {
                 this.editPlayersVM.SetMessage("Incomplete information!", "Password field is empty!");
                 return null;
             }
-            return new Player(fullName, email, age, password);
+            uint score = this.editPlayersVM.Score;
+            if (score < 0)
+            {
+                this.editPlayersVM.SetMessage("Incomplete information!", "Player score must be greater or equal with 0!");
+                return null;
+            }
+            return new Player(playerID, string.Empty, fullName, email, age, password, score);
         }
     }
 }

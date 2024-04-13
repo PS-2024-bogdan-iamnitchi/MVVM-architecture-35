@@ -115,7 +115,7 @@ namespace MVVM_architecture_35.Model.Repository
 
         public DataTable GetPlayersTable()
         {
-            string commandInput = "SELECT * FROM Player WHERE IsAdmin='No' ORDER BY [FullName]";
+            string commandInput = "SELECT * FROM Player WHERE IsAdmin='No' ORDER BY [ID]";
             DataTable playerTable = this.repository.GetTable(commandInput);
             if(playerTable == null || playerTable.Rows.Count == 0)
             {

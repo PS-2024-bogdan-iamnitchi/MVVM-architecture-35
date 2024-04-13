@@ -20,14 +20,27 @@ namespace MVVM_architecture_35.ViewModel.Commands.EditPlayersCommands
         public void Execute()
         {
             PlayerRepository playerRepository = new PlayerRepository();
-
             try
             {
-
+                if (this.editPlayersVM.SelectedRow != null)
+                {
+                    uint selectedID = Convert.ToUInt32(this.editPlayersVM.SelectedRow.Cells[0].Value);
+                    bool result = playerRepository.DeletePlayer(selectedID);
+                    if (result)
+                    {
+                        this.editPlayersVM.SetMessage("Success!", "Deletion was completed successfully!");
+                        this.editPlayersVM.LoadCommand.Execute();
+                        this.editPlayersVM.ResetFieldsCommand.Execute();
+                    }
+                    else
+                        this.editPlayersVM.SetMessage("Failure!", "Deletion was ended with failure!");
+                }
+                else
+                    this.editPlayersVM.SetMessage("Failure!", "No player has been selected to be deleted!");
             }
-            catch (Exception ex)
+            catch (Exception exception)
             {
-                this.editPlayersVM.SetMessage("Exeption - Delete", ex.ToString());
+                this.editPlayersVM.SetMessage("Exception - Delete", exception.ToString());
             }
         }
     }

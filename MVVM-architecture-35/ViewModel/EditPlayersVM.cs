@@ -14,15 +14,19 @@ namespace MVVM_architecture_35.ViewModel
 {
     public class EditPlayersVM : INotifyPropertyChanged
     {
-        private int playerID;
+        private uint playerID;
         private string fullName;
         private string email;
-        private int age;
+        private uint age;
         private string password;
+        private uint score;
+
+        private string searchInfo;
 
         public DataTable PlayersTable;
+        public DataGridViewRow SelectedRow;
 
-        public string loggedPlayerEmail;
+        private string loggedPlayerEmail;
         private bool isVisible;
         public IComand LoadCommand;
         public IComand AddCommand;
@@ -30,6 +34,8 @@ namespace MVVM_architecture_35.ViewModel
         public IComand DeleteCommand;
         public IComand SearchCommand;
         public IComand ToHomeCommand;
+        public IComand SetFiledsCommand;
+        public IComand ResetFieldsCommand;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -40,8 +46,12 @@ namespace MVVM_architecture_35.ViewModel
             this.email = "";
             this.age = 0;
             this.password = "";
+            this.score = 0;
+
+            this.searchInfo = "";
 
             this.PlayersTable = new DataTable();
+            this.SelectedRow = null;
 
             this.loggedPlayerEmail = loggedPlayerEmail;
             this.isVisible = true;
@@ -51,8 +61,10 @@ namespace MVVM_architecture_35.ViewModel
             this.DeleteCommand = new DeleteCommand(this);
             this.SearchCommand = new SearchCommand(this);
             this.ToHomeCommand = new ToHomeCommand(this);
+            this.SetFiledsCommand = new SetFiledsCommand(this);
+            this.ResetFieldsCommand = new ResetFieldsCommand(this);
         }
-        public int PlayerID
+        public uint PlayerID
         {
             get { return this.playerID; }
             set
@@ -79,7 +91,7 @@ namespace MVVM_architecture_35.ViewModel
                 OnPropertyChanged(nameof(Email));
             }
         }
-        public int Age
+        public uint Age
         {
             get { return this.age; }
             set
@@ -95,6 +107,25 @@ namespace MVVM_architecture_35.ViewModel
             {
                 this.password = value;
                 OnPropertyChanged(nameof(Password));
+            }
+        }
+        public uint Score
+        {
+            get { return this.score; }
+            set
+            {
+                this.score = value;
+                OnPropertyChanged(nameof(Score));
+            }
+        }
+
+        public string SearchInfo
+        {
+            get { return this.searchInfo; }
+            set
+            {
+                this.searchInfo = value;
+                OnPropertyChanged(nameof(SearchInfo));
             }
         }
 
