@@ -19,7 +19,13 @@ namespace MVVM_architecture_35.ViewModel.Commands.GameCommands
         //Implementing IComand -----------------------------------------------------------------------------------------------------
         public void Execute()
         {
-            Debug.WriteLine("Restart");
+            this.gameVM.PlayerScore = 0;
+            this.gameVM.OponentScore = 0;
+
+            this.gameVM.PlayerColor = System.Drawing.Color.FromArgb(210, 210, 210);
+            this.gameVM.OponentColor = System.Drawing.Color.FromArgb(210, 210, 210);
+
+            this.gameVM.InitGameCommand.Execute();
         }
 
         //Command specific----------------------------------------------------------------------------------------------------------------------

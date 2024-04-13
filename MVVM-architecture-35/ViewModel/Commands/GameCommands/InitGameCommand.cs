@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.Reflection.Emit;
 using System.Security.Policy;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
@@ -25,14 +26,16 @@ namespace MVVM_architecture_35.ViewModel.Commands.GameCommands
             this.initAttributesFromVM();
             this.createButtonsGrid();
 
+            this.gameVM.gameModel.Board = this.gameVM.gameModel.GetNewBoard();
+            this.gameVM.gameModel.GameState = GameState.Init;
+            this.gameVM.gameModel.GameOutcome = GameOutcome.None;
         }
 
         //Command specific----------------------------------------------------------------------------------------------------------------------
         private void createButtonsGrid()
         {
             int size = this.gameVM.gameModel.BoardSize;
-            this.gameVM.InitualizeButtonsGrid(size);
-
+            this.gameVM.ButtonsGrid = new Button[size, size];
             for (int row = 0; row < size; row++)
             {
                 for (int col = 0; col < size; col++)
@@ -51,10 +54,9 @@ namespace MVVM_architecture_35.ViewModel.Commands.GameCommands
                     {
                         this.gridButtonEvent(sender, e);
                     };
-                    this.gameVM.AddButtonToGrid(button, row, col);
+                    this.gameVM.ButtonsGrid[row, col] = button; ;
                 }
             }
-            
         }
 
         private void gridButtonEvent(object sender, EventArgs e)
@@ -70,7 +72,7 @@ namespace MVVM_architecture_35.ViewModel.Commands.GameCommands
             {
                 for (int col = 0; col < size; col++)
                 {
-                    if (this.gameVM.GetButtonFromGrid(row, col) == clickedButton)
+                    if (this.gameVM.ButtonsGrid[row, col] == clickedButton)
                     {
                         this.GridButtonPressed(row, col);
                         return;
@@ -125,17 +127,16 @@ namespace MVVM_architecture_35.ViewModel.Commands.GameCommands
             {
                 this.gameVM.ScoreVisible = false;
             }
-            this.gameVM.BoardSize = 4;
 
             this.gameVM.PlayerColor = System.Drawing.Color.FromArgb(210, 210, 210);
-            this.gameVM.PlayerMovesImage = Properties.Resources.ResourceManager.GetObject("green_level1") as System.Drawing.Image;
+            this.gameVM.PlayerMovesImage = Properties.Resources.ResourceManager.GetObject("green_level" + this.gameVM.Level) as System.Drawing.Image;
             this.gameVM.PlayerScore = 0;
 
             this.gameVM.OponentColor = System.Drawing.Color.FromArgb(210, 210, 210);
-            this.gameVM.OponentMovesImage = Properties.Resources.ResourceManager.GetObject("red_level1") as System.Drawing.Image;
+            this.gameVM.OponentMovesImage = Properties.Resources.ResourceManager.GetObject("red_level" + this.gameVM.Level) as System.Drawing.Image;
             this.gameVM.OponentScore = 0;
 
-            this.gameVM.PlayButtonImage = Properties.Resources.ResourceManager.GetObject("start") as System.Drawing.Image;
+            this.gameVM.PlayButtonImage = Properties.Resources.start;
         }
         private uint getLoggedInPlayerScore()
         {

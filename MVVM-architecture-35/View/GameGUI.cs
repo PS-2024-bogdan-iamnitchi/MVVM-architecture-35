@@ -22,11 +22,11 @@ namespace MVVM_architecture_35.View
             this.nudLevel.DataBindings.Add("Value", this.gameVM, "level", false, DataSourceUpdateMode.OnPropertyChanged);
 
             this.playerLabel.DataBindings.Add("ForeColor", this.gameVM, "playerColor", false, DataSourceUpdateMode.OnPropertyChanged);
-            this.playerMovesPictureBox.DataBindings.Add("Image", this.gameVM, "playerMovesImage", true, DataSourceUpdateMode.OnPropertyChanged);
+            this.playerMovesPictureBox.DataBindings.Add("Image", this.gameVM, "playerMovesImage", false, DataSourceUpdateMode.OnPropertyChanged);
             this.nudPlayerScore.DataBindings.Add("Value", this.gameVM, "playerScore", false, DataSourceUpdateMode.OnPropertyChanged);
 
             this.oponentLabel.DataBindings.Add("ForeColor", this.gameVM, "oponentColor", false, DataSourceUpdateMode.OnPropertyChanged);
-            this.oponentMovesPictureBox.DataBindings.Add("Image", this.gameVM, "oponentMovesImage", true, DataSourceUpdateMode.OnPropertyChanged);
+            this.oponentMovesPictureBox.DataBindings.Add("Image", this.gameVM, "oponentMovesImage", false, DataSourceUpdateMode.OnPropertyChanged);
             this.nudOponentScore.DataBindings.Add("Value", this.gameVM, "oponentScore", false, DataSourceUpdateMode.OnPropertyChanged);
 
             this.playPauseButton.DataBindings.Add("BackgroundImage", this.gameVM, "playButtonImage", true, DataSourceUpdateMode.OnPropertyChanged);
@@ -39,11 +39,17 @@ namespace MVVM_architecture_35.View
             this.timerCPU.Tick += delegate { gameVM.CPUMovesCommand.Execute(); };
             //this.timerCPU.Start();
             this.UpdateControls();
+
+            this.gameVM.PropertyChanged += GameVM_PropertyChanged;
+        }
+
+        private void GameVM_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            Debug.WriteLine(e.PropertyName);
         }
 
         private void UpdateControls()
         {
-            Debug.WriteLine("Aici");
             buttonsTableLayout.Controls.Clear();
 
             int boardSize = this.gameVM.gameModel.BoardSize;

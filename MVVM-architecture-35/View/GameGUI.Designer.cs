@@ -189,11 +189,6 @@
             this.nudOponentScore.Cursor = System.Windows.Forms.Cursors.No;
             this.nudOponentScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudOponentScore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
-            this.nudOponentScore.Increment = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
             this.nudOponentScore.Location = new System.Drawing.Point(565, 459);
             this.nudOponentScore.Name = "nudOponentScore";
             this.nudOponentScore.ReadOnly = true;
@@ -207,11 +202,6 @@
             this.nudPlayerScore.Cursor = System.Windows.Forms.Cursors.No;
             this.nudPlayerScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudPlayerScore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
-            this.nudPlayerScore.Increment = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
             this.nudPlayerScore.Location = new System.Drawing.Point(778, 459);
             this.nudPlayerScore.Name = "nudPlayerScore";
             this.nudPlayerScore.ReadOnly = true;

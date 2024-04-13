@@ -19,9 +19,16 @@ namespace MVVM_architecture_35.ViewModel.Commands.GameCommands
         //Implementing IComand -----------------------------------------------------------------------------------------------------
         public void Execute()
         {
-            //this.gameVM.gameModel.Level = (int)this.gameVM.Level;
-            //Debug.WriteLine(this.gameVM.Level);
-            //this.gameVM.InitGameCommand.Execute();
+            if(this.gameVM.Level == 2)
+            {
+                this.gameVM.Level = 1;
+            }
+            else if (this.gameVM.Level == 1)
+            {
+                this.gameVM.Level = 2;
+            }
+            this.gameVM.gameModel.Level = (int)this.gameVM.Level;
+            this.gameVM.InitGameCommand.Execute();
         }
 
         //Command specific----------------------------------------------------------------------------------------------------------------------

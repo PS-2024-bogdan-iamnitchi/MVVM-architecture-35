@@ -17,7 +17,6 @@ namespace MVVM_architecture_35.ViewModel
 {
     public class GameVM : INotifyPropertyChanged
     {
-        private int boardSize;
         private uint level;
         private uint score;
         private bool scoreVisible;
@@ -66,16 +65,6 @@ namespace MVVM_architecture_35.ViewModel
 
         }
 
-        public int BoardSize
-        {
-            get { return this.boardSize; }
-            set
-            {
-                this.boardSize = value;
-                Debug.WriteLine("de ceee");
-                OnPropertyChanged(nameof(BoardSize));
-            }
-        }
         public uint Level
         {
             get { return this.level; }
@@ -166,7 +155,6 @@ namespace MVVM_architecture_35.ViewModel
                 OnPropertyChanged(nameof(OponentMovesImage));
             }
         }
-        
 
         public string LoggedPlayerEmail
         {
@@ -185,26 +173,6 @@ namespace MVVM_architecture_35.ViewModel
                 this.isVisible = value;
                 OnPropertyChanged(nameof(IsVisible));
             }
-        }
-
-        public void DisableButton(int row, int col)
-        {
-            this.ButtonsGrid[row, col].Enabled = false;
-        }
-
-        public Button GetButtonFromGrid(int row, int col)
-        {
-            return ButtonsGrid[row, col];
-        }
-
-        public void InitualizeButtonsGrid(int gridSize)
-        {
-            this.ButtonsGrid = new Button[gridSize, gridSize];
-        }
-
-        public void AddButtonToGrid(Button button, int row, int col)
-        {
-            this.ButtonsGrid[row, col] = button;
         }
 
         public Button GetButtonWithStyle(int row, int col, int buttonSize, int spacing)
