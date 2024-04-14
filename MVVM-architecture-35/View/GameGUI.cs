@@ -37,10 +37,8 @@ namespace MVVM_architecture_35.View
             this.nudLevel.ValueChanged += delegate { gameVM.LevelChangedCommand.Execute(); this.UpdateControls(); };
         
             this.timerCPU.Tick += delegate { gameVM.CPUMovesCommand.Execute(); };
-            this.timerCPU.Start();
-            this.timerCPU.Enabled = false;
-            this.timerCPU.Enabled = true;
 
+            this.gameVM.PropertyChanged += GameVM_PropertyChanged;
             this.UpdateControls();
         }
 
@@ -56,5 +54,23 @@ namespace MVVM_architecture_35.View
                 }
             }
         }
+
+        private void GameVM_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if(e.PropertyName.Equals(nameof(this.gameVM.CPUStart)))
+            {
+                if (this.gameVM.CPUStart == true)
+                    this.timerCPU.Start();
+                else
+                    this.timerCPU.Stop();
+            }
+            if (e.PropertyName.Equals(nameof(this.gameVM.Reset)))
+            {
+                this.UpdateControls();
+            }
+
+        }
+
+       
     }
 }

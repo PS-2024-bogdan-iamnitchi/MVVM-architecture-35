@@ -63,6 +63,7 @@ namespace MVVM_architecture_35.ViewModel.Commands.EditPlayersCommands
             }
         }
 
+        //Command specific----------------------------------------------------------------------------------------------------------------------
         private void playersListToDataTable(List<Player> list)
         {
             foreach (Player p in list)

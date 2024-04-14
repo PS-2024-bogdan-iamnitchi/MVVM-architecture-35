@@ -51,14 +51,12 @@ namespace MVVM_architecture_35.ViewModel.Commands.GameCommands
         private void savePlayerScoreToDB()
         {
             PlayerRepository playerRepository = new PlayerRepository();
-            Player player = null;
-
             try
             {
                 string email = this.gameVM.LoggedPlayerEmail;
                 if (email != null && email.Length != 0)
                 {
-                    player = playerRepository.GetPlayerByEmail(email);
+                    Player player = playerRepository.GetPlayerByEmail(email);
                     if (player != null)
                     {
                         player.Score += this.gameVM.PlayerScore;

@@ -48,6 +48,8 @@ namespace MVVM_architecture_35.ViewModel.Commands.EditPlayersCommands
                 this.editPlayersVM.SetMessage("Exception - Update", exception.ToString());
             }
         }
+
+        //Command specific----------------------------------------------------------------------------------------------------------------------
         private Player validInformation()
         {
             uint playerID = this.editPlayersVM.PlayerID;

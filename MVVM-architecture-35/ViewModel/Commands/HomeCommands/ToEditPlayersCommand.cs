@@ -31,7 +31,11 @@ namespace MVVM_architecture_35.ViewModel.Commands.HomeCommands
                 {
                     Player player = playerRepository.GetPlayerByEmail(email);
                     if (player != null && player.IsAdmin.Equals("Yes"))
-                        this.toEditPlayersGUI(email);
+                    {
+                        this.homeVM.IsVisible = false;
+                        EditPlayersGUI editPlayersGUI = new EditPlayersGUI(email);
+                        editPlayersGUI.Show();
+                    }
                     else
                         this.homeVM.SetMessage("Not Allowed!", "You don't have rights to access this page!");
                 }
@@ -40,13 +44,6 @@ namespace MVVM_architecture_35.ViewModel.Commands.HomeCommands
             {
                 this.homeVM.SetMessage("Exeption - Login", ex.ToString());
             }
-        }
-        //Command specific----------------------------------------------------------------------------------------------------------------------
-        private void toEditPlayersGUI(string email)
-        {
-            this.homeVM.IsVisible = false;
-            EditPlayersGUI editPlayersGUI = new EditPlayersGUI(email);
-            editPlayersGUI.Show();
         }
     }
 }

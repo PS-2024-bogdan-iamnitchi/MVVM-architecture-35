@@ -23,6 +23,5 @@ namespace MVVM_architecture_35.ViewModel.Commands.LoginCommands
             GameGUI gameGUI = new GameGUI("");
             gameGUI.Show();
         }
-
     }
 }

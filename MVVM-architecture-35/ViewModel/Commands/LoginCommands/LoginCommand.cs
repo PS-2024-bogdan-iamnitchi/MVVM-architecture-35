@@ -36,7 +36,9 @@ namespace MVVM_architecture_35.ViewModel.Commands
                     if (result)
                     {
                         //this.loginVM.SetMessage("Success!", "New account was created successfully!");
-                        this.toHomeGUI(email);
+                        this.loginVM.IsVisible = false;
+                        HomeGUI homeGUI = new HomeGUI(email);
+                        homeGUI.Show();
                     }
                     else
                         this.loginVM.SetMessage("Failure!", "Login was ended with failure!");
@@ -50,13 +52,6 @@ namespace MVVM_architecture_35.ViewModel.Commands
         }
 
         //Command specific----------------------------------------------------------------------------------------------------------------------
-        private void toHomeGUI(string email)
-        {
-            this.loginVM.IsVisible = false;
-            HomeGUI homeGUI = new HomeGUI(email);
-            homeGUI.Show();
-        }
-
         private bool validInformation(string email, string password)
         {
             if (email == null || email.Length == 0)

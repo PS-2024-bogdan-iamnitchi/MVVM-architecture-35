@@ -26,9 +26,7 @@ namespace MVVM_architecture_35.ViewModel.Commands.GameCommands
             this.gameVM.OponentColor = System.Drawing.Color.FromArgb(210, 210, 210);
 
             this.gameVM.InitGameCommand.Execute();
+            this.gameVM.Reset = true;
         }
-
-        //Command specific----------------------------------------------------------------------------------------------------------------------
-
     }
 }

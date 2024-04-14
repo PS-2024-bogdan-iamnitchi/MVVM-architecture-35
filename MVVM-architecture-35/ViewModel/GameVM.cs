@@ -12,6 +12,7 @@ using MVVM_architecture_35.ViewModel.Commands.GameCommands;
 using System.Drawing;
 using MVVM_architecture_35.Model;
 using System.Diagnostics;
+using System.Windows.Input;
 
 namespace MVVM_architecture_35.ViewModel
 {
@@ -23,6 +24,7 @@ namespace MVVM_architecture_35.ViewModel
         private uint playerScore;
         private uint oponentScore;
         private bool cpuStart;
+        private bool reset;
 
         private string loggedPlayerEmail;
         private bool isVisible;
@@ -39,8 +41,8 @@ namespace MVVM_architecture_35.ViewModel
         public IComand RestartCommand;
         public IComand ExitCommand;
         public IComand LevelChangedCommand;
-        public IComand PlayerMoveCommand;
         public IComand CPUMovesCommand;
+        public ICommand PlayerMoveCommand;
 
         public Button[,] ButtonsGrid;
         public GameModel gameModel;
@@ -53,6 +55,8 @@ namespace MVVM_architecture_35.ViewModel
 
             this.loggedPlayerEmail = loggedPlayerEmail;
             this.isVisible = true;
+            this.playerScore = 0;
+            this.oponentScore = 0;
 
             this.InitGameCommand = new InitGameCommand(this);
             this.InitGameCommand.Execute();
@@ -61,8 +65,8 @@ namespace MVVM_architecture_35.ViewModel
             this.RestartCommand = new RestartCommand(this);
             this.ExitCommand = new ExitCommand(this);
             this.LevelChangedCommand = new LevelChangedCommand(this);
-            this.PlayerMoveCommand = new PlayerMovesCommand(this);
             this.CPUMovesCommand = new CPUMovesCommand(this);
+            this.PlayerMoveCommand = new PlayerMovesCommand(this);
 
         }
 
@@ -118,6 +122,15 @@ namespace MVVM_architecture_35.ViewModel
             {
                 this.cpuStart = value;
                 OnPropertyChanged(nameof(CPUStart));
+            }
+        }
+        public bool Reset
+        {
+            get { return this.reset; }
+            set
+            {
+                this.reset = value;
+                OnPropertyChanged(nameof(Reset));
             }
         }
         public System.Drawing.Color PlayerColor
@@ -198,7 +211,6 @@ namespace MVVM_architecture_35.ViewModel
 
             return button;
         }
-
         public Form CreateSelectArrowMessageBox(string title, string message)
         {
             Form messageForm = new Form();
@@ -221,7 +233,6 @@ namespace MVVM_architecture_35.ViewModel
             messageForm.Controls.Add(label);
             return messageForm;
         }
-
         public TableLayoutPanel CreateChooseDirectionTable()
         {
             TableLayoutPanel buttonsPanel = new TableLayoutPanel();
@@ -240,7 +251,6 @@ namespace MVVM_architecture_35.ViewModel
 
             return buttonsPanel;
         }
-
         public Button CreateDirectionButton(string imageName)
         {
             Button button = new Button();
@@ -257,18 +267,10 @@ namespace MVVM_architecture_35.ViewModel
             return button;
         }
 
-        public void SetInitialButtonBackground(string imageName, int row, int col)
-        {
-            ButtonsGrid[row, col].BackgroundImageLayout = ImageLayout.Stretch;
-            ButtonsGrid[row, col].BackgroundImage = Properties.Resources.ResourceManager.GetObject(imageName) as System.Drawing.Image;
-            ButtonsGrid[row, col].Enabled = false;
-        }
-
         public void SetMessage(string title, string message)
         {
             MessageBox.Show(message, title);
         }
-
         public DialogResult ChooseOptionMessage(string title, string message)
         {
             return MessageBox.Show(message, title, MessageBoxButtons.YesNoCancel);

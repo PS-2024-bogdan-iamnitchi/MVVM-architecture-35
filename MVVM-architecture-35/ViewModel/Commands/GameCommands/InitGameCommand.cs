@@ -32,6 +32,49 @@ namespace MVVM_architecture_35.ViewModel.Commands.GameCommands
         }
 
         //Command specific----------------------------------------------------------------------------------------------------------------------
+        private void initAttributesFromVM()
+        {
+            this.gameVM.Level = (uint)this.gameVM.gameModel.Level;
+            if (this.gameVM.LoggedPlayerEmail != string.Empty)
+            {
+                this.gameVM.ScoreVisible = true;
+                this.gameVM.Score = getLoggedInPlayerScore();
+            }
+            else
+            {
+                this.gameVM.ScoreVisible = false;
+            }
+
+            this.gameVM.CPUStart = false;
+
+            this.gameVM.PlayerColor = System.Drawing.Color.FromArgb(210, 210, 210);
+            this.gameVM.PlayerMovesImage = Properties.Resources.ResourceManager.GetObject("green_level" + this.gameVM.Level) as System.Drawing.Image;
+
+            this.gameVM.OponentColor = System.Drawing.Color.FromArgb(210, 210, 210);
+            this.gameVM.OponentMovesImage = Properties.Resources.ResourceManager.GetObject("red_level" + this.gameVM.Level) as System.Drawing.Image;
+
+            this.gameVM.PlayButtonImage = Properties.Resources.start;
+        }
+        private uint getLoggedInPlayerScore()
+        {
+            PlayerRepository playerRepository = new PlayerRepository();
+            Player player = null;
+
+            try
+            {
+                string email = this.gameVM.LoggedPlayerEmail;
+                if (email != null && email.Length != 0)
+                {
+                    player = playerRepository.GetPlayerByEmail(email);
+                }
+            }
+            catch (Exception ex)
+            {
+                this.gameVM.SetMessage("Exeption - GetLoggedInPlayer", ex.ToString());
+            }
+            return player.Score;
+        }
+
         private void createButtonsGrid()
         {
             int size = this.gameVM.gameModel.BoardSize;
@@ -58,7 +101,6 @@ namespace MVVM_architecture_35.ViewModel.Commands.GameCommands
                 }
             }
         }
-
         private void gridButtonEvent(object sender, EventArgs e)
         {
             Button clickedButton = sender as Button;
@@ -80,7 +122,6 @@ namespace MVVM_architecture_35.ViewModel.Commands.GameCommands
                 }
             }
         }
-
         public void GridButtonPressed(int row, int col)
         {
             if (this.gameVM.gameModel.GameState != GameState.Started)
@@ -105,8 +146,7 @@ namespace MVVM_architecture_35.ViewModel.Commands.GameCommands
                 Button dirButton = this.gameVM.CreateDirectionButton(imageName);
                 dirButton.Click += (sender, e) =>
                 {
-                    //this.playerMove(dir, color, row, col);
-                    this.gameVM.SetInitialButtonBackground(imageName, row, col);
+                    this.gameVM.PlayerMoveCommand.Execute(new ParameterObject { Dir = dir, Color = color, Row = row, Col = col });
                     messageBox.Close();
                 };
                 (int t_row, int t_col) = Arrow.DirectionToIndex(dir);
@@ -115,48 +155,13 @@ namespace MVVM_architecture_35.ViewModel.Commands.GameCommands
             messageBox.Controls.Add(dirButtonsTable);
             messageBox.ShowDialog();
         }
+    }
 
-        private void initAttributesFromVM()
-        {
-            this.gameVM.Level = (uint)this.gameVM.gameModel.Level;
-            if(this.gameVM.LoggedPlayerEmail != string.Empty)
-            {
-                this.gameVM.ScoreVisible = true;
-                this.gameVM.Score = getLoggedInPlayerScore();
-            }
-            else
-            {
-                this.gameVM.ScoreVisible = false;
-            }
-
-            this.gameVM.PlayerColor = System.Drawing.Color.FromArgb(210, 210, 210);
-            this.gameVM.PlayerMovesImage = Properties.Resources.ResourceManager.GetObject("green_level" + this.gameVM.Level) as System.Drawing.Image;
-            this.gameVM.PlayerScore = 0;
-
-            this.gameVM.OponentColor = System.Drawing.Color.FromArgb(210, 210, 210);
-            this.gameVM.OponentMovesImage = Properties.Resources.ResourceManager.GetObject("red_level" + this.gameVM.Level) as System.Drawing.Image;
-            this.gameVM.OponentScore = 0;
-
-            this.gameVM.PlayButtonImage = Properties.Resources.start;
-        }
-        private uint getLoggedInPlayerScore()
-        {
-            PlayerRepository playerRepository = new PlayerRepository();
-            Player player = null;
-
-            try
-            {
-                string email = this.gameVM.LoggedPlayerEmail;
-                if (email != null && email.Length != 0)
-                {
-                    player = playerRepository.GetPlayerByEmail(email);
-                }
-            }
-            catch (Exception ex)
-            {
-                this.gameVM.SetMessage("Exeption - GetLoggedInPlayer", ex.ToString());
-            }
-            return player.Score;
-        }
+    class ParameterObject
+    {
+        public Direction Dir { get; set; }
+        public Model.Color Color { get; set; }
+        public int Row { get; set; }
+        public int Col { get; set; }
     }
 }

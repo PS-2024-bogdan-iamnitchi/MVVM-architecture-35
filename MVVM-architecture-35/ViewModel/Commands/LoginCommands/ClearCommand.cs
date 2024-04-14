@@ -22,6 +22,5 @@ namespace MVVM_architecture_35.ViewModel.Commands.LoginCommands
             this.loginVM.Email = "";
             this.loginVM.Password = "";
         }
-
     }
 }

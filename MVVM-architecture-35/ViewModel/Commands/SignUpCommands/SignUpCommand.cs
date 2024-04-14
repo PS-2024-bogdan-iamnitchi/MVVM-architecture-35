@@ -29,7 +29,9 @@ namespace MVVM_architecture_35.ViewModel.Commands.SignUpCommands
                     if (result)
                     {
                         this.signUpVM.SetMessage("Success!", "New account was created successfully!");
-                        this.toLoginGUI();
+                        this.signUpVM.IsVisible = false;
+                        LoginGUI loginGUI = new LoginGUI();
+                        loginGUI.Show();
                     }
                     else
                         this.signUpVM.SetMessage("Failure!", "Adding was ended with failure!");
@@ -43,13 +45,6 @@ namespace MVVM_architecture_35.ViewModel.Commands.SignUpCommands
         }
 
         //Command specific----------------------------------------------------------------------------------------------------------------------
-        private void toLoginGUI()
-        {
-            this.signUpVM.IsVisible = false;
-            LoginGUI loginGUI = new LoginGUI();
-            loginGUI.Show();
-        }
-
         private Player validInformation()
         {
             string fullName = this.signUpVM.FullName;
