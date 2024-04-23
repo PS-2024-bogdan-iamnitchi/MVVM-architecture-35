@@ -20,14 +20,14 @@ namespace MVVM_architecture_35.ViewModel
         private uint age;
         private string password;
         private uint score;
-
         private string searchInfo;
+
+        private string loggedPlayerEmail;
+        private bool isVisible;
 
         public DataTable PlayersTable;
         public DataGridViewRow SelectedRow;
 
-        private string loggedPlayerEmail;
-        private bool isVisible;
         public IComand LoadCommand;
         public IComand AddCommand;
         public IComand UpdateCommand;

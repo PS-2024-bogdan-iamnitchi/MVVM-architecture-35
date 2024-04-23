@@ -7,8 +7,8 @@ namespace MVVM_architecture_35.ViewModel
 {
     public class HomeVM : INotifyPropertyChanged
     {
-        public string loggedPlayerEmail;
-        public bool isVisible;
+        private string loggedPlayerEmail;
+        private bool isVisible;
         public IComand ToGameCommand;
         public IComand ToEditPlayersCommand;
         public IComand SignOutCommand;
